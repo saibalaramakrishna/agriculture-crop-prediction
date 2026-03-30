@@ -10,7 +10,7 @@ import json
 
 load_dotenv()
 
-MONGO_URI = os.getenv("MONGO_URI")
+MONGO_URL = os.getenv("MONGO_URL")
 
 
 # Robust model loader: try joblib (recommended), then fall back to pickle files.
@@ -44,7 +44,7 @@ preprocessor = _safe_load_model('models/preprocessor.joblib', 'models/preprocess
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
 # app.config["MONGO_URI"] = os.getenv("MONGO_URI")
-app.config["MONGO_URI"] = MONGO_URI
+app.config["MONGO_URL"] = MONGO_URL
 mongo = PyMongo(app)
 
 collection = mongo.db.crop_statistics
