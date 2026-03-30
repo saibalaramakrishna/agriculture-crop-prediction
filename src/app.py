@@ -10,7 +10,7 @@ import json
 
 load_dotenv()
 
-MONGO_URL = os.getenv("MONGO_URL")
+MONGO_URI = os.getenv("MONGO_URI")
 
 
 # Robust model loader: try joblib (recommended), then fall back to pickle files.
