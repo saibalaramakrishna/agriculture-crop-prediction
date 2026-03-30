@@ -44,7 +44,7 @@ preprocessor = _safe_load_model('models/preprocessor.joblib', 'models/preprocess
 app = Flask(__name__, template_folder='templates', static_folder='static')
 
 # app.config["MONGO_URI"] = os.getenv("MONGO_URI")
-app.config["MONGO_URI"] = MONGO_URL
+app.config["MONGO_URI"] = MONGO_URI
 mongo = PyMongo(app)
 
 collection = mongo.db.crop_statistics
